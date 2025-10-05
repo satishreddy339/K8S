@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-app-deployment
+  namespace: satish
+  labels:
+    app: demo-app
+    environment: development
+    project: demo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: demo-app
+      environment: development
+      project: demo
+  template:
+    metadata:
+      labels:
+        app: demo-app
+        environment: development
+        project: demo
+    spec:
+      containers:
+        - name: demo-app
+          image: nginx:latest
+          ports:
+            - containerPort: 80
