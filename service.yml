@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: service
+metadata:
+  name: demo-app-service
+  namespace: demo-app
+  labels:
+    app: demo-app
+    environment: development
+    project: demo
+spec:
+  type: ClusterIP
+  selector:
+    app: demo-app
+    environment: development
+    project: demo
+  ports:
+    - port: 80
+      targetPort: 80
