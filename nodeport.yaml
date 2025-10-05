@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-app-nodeport
+  namespace: satish
+  labels:
+    app: demo-app
+    environment: development
+    project: demo
+spec:
+  type: NodePort
+  selector:
+    app: demo-app
+    environment: development
+    project: demo
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30007
