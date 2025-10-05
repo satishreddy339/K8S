@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: satish
+  labels:
+    name: satish
+    environment: development
+    project: demo
